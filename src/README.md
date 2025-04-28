@@ -2,206 +2,6 @@
 
 A modern React application that allows users to manage and create lists by combining items from existing lists. Built with React.js and Tailwind CSS.
 
-## 🚀 Quick Start
-
-### Prerequisites
-
-- Node.js (v14 or higher)
-- npm or yarn
-- Git
-
-### Local Development Setup
-
-1. Clone the repository:
-
-```bash
-git clone https://github.com/Ravi8264/list-creation-app.git
-cd list-creation-app
-```
-
-2. Install dependencies:
-
-```bash
-npm install
-```
-
-3. Start the development server:
-
-```bash
-npm run dev
-```
-
-4. Open your browser and visit:
-
-```
-http://localhost:5173
-```
-
-## 📦 Deployment
-
-### Option 1: Deploy to GitHub Pages
-
-1. Install gh-pages:
-
-```bash
-npm install gh-pages --save-dev
-```
-
-2. Update package.json:
-
-```json
-{
-  "homepage": "https://Ravi8264.github.io/list-creation-app",
-  "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
-  }
-}
-```
-
-3. Deploy:
-
-```bash
-npm run deploy
-```
-
-### Option 2: Deploy to Vercel
-
-1. Install Vercel CLI:
-
-```bash
-npm install -g vercel
-```
-
-2. Deploy:
-
-```bash
-vercel
-```
-
-### Option 3: Deploy to Netlify
-
-1. Install Netlify CLI:
-
-```bash
-npm install -g netlify-cli
-```
-
-2. Deploy:
-
-```bash
-netlify deploy
-```
-
-## 🔧 Environment Setup
-
-1. Create a `.env` file in the root directory:
-
-```env
-VITE_API_URL=https://apis.ccbp.in/list-creation/lists
-```
-
-2. Update the API URL in your code:
-
-```javascript
-const API_URL = import.meta.env.VITE_API_URL;
-```
-
-## 🛠️ Build Process
-
-1. Build the application:
-
-```bash
-npm run build
-```
-
-2. Preview the build:
-
-```bash
-npm run preview
-```
-
-## 📱 Production Deployment
-
-### Using GitHub Actions (Recommended)
-
-1. Create `.github/workflows/deploy.yml`:
-
-```yaml
-name: Deploy to GitHub Pages
-
-on:
-  push:
-    branches: [main]
-
-jobs:
-  build-and-deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-
-      - name: Install Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: "16"
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Build
-        run: npm run build
-
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
-```
-
-2. Push to GitHub:
-
-```bash
-git add .
-git commit -m "Add GitHub Actions workflow"
-git push origin main
-```
-
-## 🔍 Troubleshooting
-
-### Common Issues
-
-1. **Build Fails**
-
-   - Clear node_modules and reinstall:
-
-   ```bash
-   rm -rf node_modules
-   npm install
-   ```
-
-2. **Deployment Fails**
-
-   - Check GitHub token permissions
-   - Verify build output directory
-   - Check for environment variables
-
-3. **API Connection Issues**
-   - Verify API endpoint
-   - Check network connectivity
-   - Verify CORS settings
-
-## 📝 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🙏 Acknowledgments
-
-- React.js team
-- Tailwind CSS team
-- CCBP.in for the API
-- GitHub for hosting
-
 ## 🚀 Features
 
 ### 1. List Management
@@ -299,6 +99,50 @@ src/
 - Provides retry option
 - User-friendly error handling
 
+## 🔧 Installation
+
+1. Clone the repository:
+
+```bash
+git clone [repository-url]
+cd [project-directory]
+```
+
+2. Install dependencies:
+
+```bash
+npm install
+```
+
+3. Start the development server:
+
+```bash
+npm run dev
+```
+
+4. Open your browser and visit:
+
+```
+http://localhost:5173
+```
+
+## 📱 Usage Guide
+
+### Viewing Lists
+
+1. The application loads with two lists displayed
+2. Each list shows items with their names and descriptions
+3. Lists are responsive and adapt to screen size
+
+### Creating New Lists
+
+1. Select exactly two lists using the checkboxes
+2. Click "Create a new list" button
+3. Use arrow buttons to move items:
+   - Right arrow (→) to move items to the new list
+   - Left arrow (←) to move items back to source lists
+4. Click "Update" to save changes or "Cancel" to discard
+
 ## 🎨 Styling Features
 
 - Modern gradient backgrounds
@@ -365,3 +209,13 @@ Response format:
 3. Commit your changes
 4. Push to the branch
 5. Create a Pull Request
+
+## 📝 License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## 🙏 Acknowledgments
+
+- React.js team
+- Tailwind CSS team
+- CCBP.in for the API
