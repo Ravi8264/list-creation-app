@@ -6,6 +6,9 @@ import path from "path";
 export default defineConfig({
   plugins: [react()],
   css: {
+    modules: {
+      localsConvention: "camelCase",
+    },
     postcss: "./postcss.config.js",
   },
   base: "/list-creation-app/",
@@ -17,9 +20,9 @@ export default defineConfig({
         main: path.resolve(__dirname, "index.html"),
       },
       output: {
-        assetFileNames: "assets/[name][extname]",
+        assetFileNames: "assets/[name].[ext]",
         chunkFileNames: "assets/[name].[hash].js",
-        entryFileNames: "assets/[name].[hash].js",
+        entryFileNames: "assets/[name].js",
       },
     },
     assetsDir: "assets",
@@ -32,16 +35,8 @@ export default defineConfig({
   },
   server: {
     historyApiFallback: true,
-    headers: {
-      "Content-Type": "application/javascript",
-    },
   },
   optimizeDeps: {
     include: ["react", "react-dom"],
-  },
-  esbuild: {
-    loader: "jsx",
-    include: /src\/.*\.jsx?$/,
-    exclude: [],
   },
 });
