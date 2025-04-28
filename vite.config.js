@@ -17,10 +17,14 @@ export default defineConfig({
         main: path.resolve(__dirname, "index.html"),
       },
     },
+    assetsDir: "assets",
   },
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
     },
+  },
+  server: {
+    historyApiFallback: true,
   },
 });

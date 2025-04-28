@@ -24,6 +24,7 @@ jobs:
       - name: Build
         run: |
           npm run build
+          cp public/404.html dist/
           touch dist/.nojekyll
         env:
           VITE_API_URL: https://apis.ccbp.in/list-creation/lists
